@@ -1,0 +1,509 @@
+azul = #10224a
+dorado = #cbb859
+gris = #ededed
+blanco = #ffffff
+
+.dorado
+	color dorado
+.bold
+	font-weight bold
+.mayus
+	text-transform uppercase
+h1
+	color dorado
+	text-transform uppercase
+	font-size 2.5em
+.page-template-template-homepage
+	.entry-header
+		h1
+			font-size 2.5em
+
+.woocommerce-breadcrumb
+.storefront-breadcrumb
+.post-edit-link
+	display none
+h1.entry-title
+	text-align center
+	margin-top 20px
+	text-transform uppercase
+	font-size 2em
+	font-weight bold
+	a
+		color dorado
+.hentry
+	padding 0
+	margin 0
+body
+	background gris
+	color black
+	font-family 'Montserrat', sans-serif
+.home.page:not(.page-template-template-homepage)
+	.site-header
+		margin-bottom 0
+.page-template-template-homepage:not(.has-post-thumbnail)
+	.site-main
+		padding-top 0
+.storefront-hero__button-edit
+	display none
+.page-template-template-homepage
+	.type-page
+		padding-top 0
+.site-header
+	background azul
+	border-bottom 1px solid dorado
+	padding-top 10px
+	padding-bottom 10px
+	margin-bottom 0
+.site-branding
+	display flex
+	align-items center
+	height 50px
+	img
+		width 120px
+.home.page:not(.page-template-template-homepage)
+	.site-header
+		padding-top 10px
+		padding-bottom 10px
+button.menu-toggle
+	background none
+	border none
+	color white
+	&::before
+	&::after
+		background white
+	span
+		&::before
+			background white
+	&:focus
+		outline none
+	&:hover
+		background none
+		border none
+		color white
+.main-navigation
+	ul
+		li
+			text-align center
+			a
+				color white
+				transition color .5s ease
+				&:hover
+					color rgba(white, .7)
+					transition color .5s ease
+.banners-home-container
+	height 200px
+	background gray
+	margin-bottom 30px
+	overflow hidden
+	display block
+	position relative
+	width 100%
+	.item
+		width 100%
+		height 200px
+		background-size 992px
+		background-position center center
+		background-repeat no-repeat
+		display block
+		background-color black
+		position relative
+.news-left-col
+	background gray
+	width 100%
+	height 250px
+	display block
+	margin-bottom 10px
+	.main-new
+		width 100%
+		height 100%
+		margin-bottom 10px
+		background-position center center
+		background-size cover
+		background-repeat no-repeat
+		display flex
+		align-items center
+		h2
+			width 90%
+			margin 0 auto
+			display inline-block
+		a
+			color white
+			border-bottom 1px solid dorado
+			text-shadow 0px 0px 5px rgba(150, 150, 150, 0.76)
+.news-right-col
+	.item
+		width 100%
+		height 150px
+		display flex
+		align-items center
+		margin-bottom 10px
+		background-position center center
+		background-size cover
+		background-repeat no-repeat
+		h3
+			width 90%
+			margin 0 auto
+			display inline-block
+			font-size 1.2em
+		a
+			color white
+			border-bottom 1px solid dorado
+			text-shadow 0px 0px 5px rgba(150, 150, 150, 0.76)
+.inner
+	width 100%
+	height 200px
+	background gray url(./assets/images/puros.jpg) no-repeat center center
+	background-size cover
+	display flex
+	justify-content center
+	align-items center
+	text-transform uppercase
+	margin 20px 0 10px 0
+	a
+		color white
+		border-bottom 1px solid dorado
+		text-shadow 0px 0px 5px rgba(150, 150, 150, 0.76)
+		&:hover
+			text-decoration none
+	&.vinos
+		background-image url(./assets/images/puros.jpg)
+	&.spirits
+		background-image url(./assets/images/spirits.jpg)
+	&.puros
+		background-image url(./assets/images/vinos.jpg)
+	&:first-of-type
+		margin-top 60px
+.daily-phrase
+	margin 50px 0 0 0
+	span
+		font-style italic
+.feed-main-new
+	.inner-container
+		height 250px
+		margin-bottom 30px
+		background-repeat no-repeat
+		background-size cover
+		h2
+			width 80%
+			height 100%
+			display flex
+			justify-content center
+			align-items center
+			color white
+			margin 0 auto
+			a
+				color white
+				text-shadow 0px 0px 5px rgba(150, 150, 150, 0.76)
+.feed-item
+	height auto
+	margin-bottom 30px
+	.inner-feed
+		background white !important
+		display block
+		.foto
+			width 100%
+			height 200px
+			display block
+			background-size cover
+			background-repeat no-repeat
+			background-position center center
+		.info
+			h3
+				text-decoration none
+				font-size 1.3em
+				margin-bottom 0
+				a
+					text-shadow none
+					font-weight bold
+					text-decoration none
+					text-transform uppercase
+					padding 10px
+					display block
+			p
+				text-align center
+				padding 0 10px 10px 10px
+				height 75px
+				overflow hidden
+				margin-bottom 5px
+.inner-banner
+	height 150px
+	width 100%
+	display block
+	background-size cover
+	background-repeat no-repeat
+	background-position center center
+	background-color gray
+	margin-bottom 0px
+	margin-top 30px
+.site-footer
+	background azul
+	color dorado
+	a
+	a:not(.button)
+		color dorado
+		text-decoration none
+	.footer-social-menu
+		padding 0
+		margin 0
+		li
+			display inline-block
+	.footer-menu-privacy
+		padding 0
+		margin 0
+		li
+			display inline-block
+	.logo-footer
+		width 120px
+		display inline-block
+		height auto
+		margin 30px 0
+
+.middle-centered
+	display flex
+	align-items center
+
+@media screen and (min-width: 569px)
+	.banners-home-container
+		height 300px
+		.item
+			height 300px
+			background-size cover
+@media screen and (min-width: 768px)
+	.site-header
+		.col-full
+			display flex
+			justify-content space-between
+	.site-header
+		.site-branding
+			a
+				width 100%
+				height 100%
+				display flex
+				align-items center
+			img
+				max-width 100%
+	.woocommerce-active
+		.site-header
+			.site-branding
+				width 25%
+				margin-bottom 0
+	.woocommerce-active .site-header .main-navigation
+	.main-navigation
+		width 74%
+		margin-right 0
+		text-transform uppercase
+	#menu-main-menu
+		text-align right
+		li
+			display inline-block
+	.main-navigation ul.menu > li > a
+	.main-navigation ul.nav-menu > li > a
+		padding 10px 15px
+		&:hover	
+			color dorado
+			text-decoration none
+			outline none
+			border none
+		&:active
+			outline none
+			border none
+		&visited
+			outline none
+			border none
+	.banners-home-container
+		height 350px
+		.item
+			height 350px
+			
+	.main-navigation ul.menu > li > a
+	.main-navigation ul.nav-menu > li > a
+		padding 10px
+	.main-navigation ul.menu > li
+	.main-navigation ul.nav-menu > li
+		&.current_page_item
+			a
+				color dorado
+	.right-sidebar
+		.content-area
+			width 100%
+	.columns-container
+		display flex
+		flex-flow row
+		justify-content space-between
+	.news-left-col
+		width 49%
+		height 311px
+		display inline-block
+		margin-bottom 10px
+		.main-new
+			width 100%
+			height 100%
+			margin-bottom 10px
+			background-position center center
+			background-size cover
+			background-repeat no-repeat
+			display flex
+			align-items center
+			h2
+				width 100%
+			a
+				color white
+				border-bottom 1px solid dorado
+				text-shadow 0px 0px 5px rgba(150, 150, 150, 0.76)
+	.news-right-col
+		width 49%
+		.item
+			width 48%
+			height 150px
+			display flex
+			align-items center
+			margin-bottom 10px
+			float right
+			&:first-of-type
+				float left
+			&:last-of-type
+				width 100%
+			h3
+				font-size 1.2em
+	.inner
+		width 100%
+		height 200px
+		background-size cover
+		display flex
+		justify-content center
+		align-items center
+		text-transform uppercase
+		margin 20px 0 10px 0
+		a
+			color white
+			border-bottom 1px solid dorado
+		&:first-of-type
+			margin-top 60px
+	.daily-phrase
+		margin 50px 0 0 0
+		span
+			font-style italic
+	.feed-main-new
+		.inner-container
+			height 300px
+	.feed-item
+		.inner-feed
+			.foto
+				width 100%
+				height 200px
+				display block
+				background-size cover
+				background-repeat no-repeat
+				background-position center center
+			.info
+				h3
+					text-decoration none
+					font-size 1.3em
+					margin-bottom 0
+					a
+						text-shadow none
+						font-weight bold
+						text-decoration none
+						text-transform uppercase
+						padding 10px
+						display block
+				p
+					text-align center
+					padding 0 10px 10px 10px
+					height 75px
+					overflow hidden
+					margin-bottom 5px
+		&.general
+			border-bottom 1px solid gray
+			padding-bottom 30px
+			.inner-feed
+				display flex
+				flex-flow row
+				background none !important
+			.foto
+				width 40%
+				display inline-block
+			.info
+				width 60%
+				display inline-block
+				text-align left
+				padding-left 20px
+				h3
+					a
+						padding-top 0
+						padding-bottom 0
+				p
+					text-align left
+					height auto
+@media screen and (min-width: 1200px)
+	.banners-home-container
+		height 450px
+		.item
+			height 450px
+	.news-left-col
+		width 49%
+		height 470px
+		display inline-block
+		margin-bottom 10px
+		.main-new
+			position relative
+			overflow hidden
+			&:hover
+				h2
+					top 0
+					cursor pointer
+					transition top .15s ease
+				a
+					color white
+			h2
+				width 100%
+				height 100%
+				display flex
+				align-items center
+				background rgba(black, .5)
+				position absolute
+				top 100%
+				transition top .5s ease
+			a
+				display inline-block
+				width 70%
+				margin 0 auto
+	.news-right-col
+		width 49%
+		.item
+			width 48%
+			height 250px
+			display flex
+			align-items center
+			margin-bottom 20px
+			float right
+			position relative
+			overflow hidden
+			&:first-of-type
+				float left
+			&:last-of-type
+				width 100%
+				height 200px
+				a
+					width 60%
+					margin 0 auto
+			&:hover
+				h3
+					top 0
+					cursor pointer
+					transition top .15s ease
+				a
+					color white
+			h3
+				font-size 1.2em
+				width 100%
+				height 100%
+				display flex
+				align-items center
+				background rgba(black, .5)
+				position absolute
+				top 100%
+				transition top .15s ease
+				a
+					width 50%
+					margin 0 auto

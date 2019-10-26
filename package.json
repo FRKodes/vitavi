@@ -1,0 +1,8 @@
+{
+	"devDependencies": {
+		"gulp": "^3.9.0",
+		"gulp-concat": "^2.6.1",
+		"gulp-stylus": "^2.7.0",
+		"gulp-watch": "^5.0.1"
+	}
+}
