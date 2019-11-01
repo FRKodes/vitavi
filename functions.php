@@ -45,6 +45,10 @@ function remove_wc_actions() {
 	remove_action( 'homepage', 'storefront_popular_products', 50);
 	remove_action( 'homepage', 'storefront_on_sale_products', 60);
 	remove_action( 'homepage', 'storefront_best_selling_products', 70);
+    remove_action( 'storefront_single_post', 'storefront_post_content', 30 );
+
+    // add_action( 'storefront_single_post_bottom', 'storefront_post_content', 1 );
+
 } 
 
 add_action('init','remove_wc_actions',10);
@@ -147,4 +151,76 @@ function create_event_taxonomies() {
             'hierarchical' => true
         )
     );
+}
+
+
+if ( ! function_exists( 'storefront_post_header' ) ) {
+    /**
+     * Display the post header with a link to the single post
+     *
+     * @since 1.0.0
+     */
+    function storefront_post_header() {
+        ?>
+        <header class="entry-header">
+        <?php
+
+        /**
+         * Functions hooked in to storefront_post_header_before action.
+         *
+         * @hooked storefront_post_meta - 10
+         */
+        do_action( 'storefront_post_header_before' );
+
+        if ( is_single() ) {
+            the_title( '<h1 class="entry-title">', '</h1>' );
+        } else {
+            the_title( sprintf( '<h2 class="alpha entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
+        }
+
+        do_action( 'storefront_post_header_after' );
+        ?>
+        </header><!-- .entry-header -->
+        <?php
+    }
+}
+
+if ( ! function_exists( 'storefront_post_content' ) ) {
+    /**
+     * Display the post content with a link to the single post
+     *
+     * @since 1.0.0
+     */
+    function storefront_post_content() {
+        ?>
+        <div class="entry-content">
+        <?php
+
+        /**
+         * Functions hooked in to storefront_post_content_before action.
+         *
+         * @hooked storefront_post_thumbnail - 10
+         */
+        // do_action( 'storefront_post_content_before' );
+
+        the_content(
+            sprintf(
+                /* translators: %s: post title */
+                __( 'Continue reading %s', 'storefront' ),
+                '<span class="screen-reader-text">' . get_the_title() . '</span>'
+            )
+        );
+
+        do_action( 'storefront_post_content_after' );
+
+        wp_link_pages(
+            array(
+                'before' => '<div class="page-links">' . __( 'Pages:', 'storefront' ),
+                'after'  => '</div>',
+            )
+        );
+        ?>
+        </div><!-- .entry-content -->
+        <?php
+    }
 }

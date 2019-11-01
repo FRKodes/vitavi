@@ -9,6 +9,10 @@ blanco = #ffffff
 	font-weight bold
 .mayus
 	text-transform uppercase
+.m-top-20
+	margin-top 20px
+.m-top-40
+	margin-top 40px
 h1
 	color dorado
 	text-transform uppercase
@@ -261,7 +265,46 @@ button.menu-toggle
 .middle-centered
 	display flex
 	align-items center
-
+.background-image
+	background-size cover
+	background-repeat no-repeat
+	background-position center center
+.item-video
+	height 200px
+	margin-bottom 30px
+	&:first-of-type
+		margin-top 10px
+	iframe
+		width 100%
+		height 100%
+		display block
+.single-evento
+	.entry-header
+		height 150px
+		border none
+		display flex
+		justify-content center
+		align-items center
+		padding 0 10%
+	h1.entry-title
+		color dorado
+		font-size 1.2em
+	h2.desc
+		font-size 1.1em
+		color dorado
+		font-weight bold
+	.entry-content
+		margin-top 10px
+	.content-txt
+		margin-top 10px
+	figure
+		img
+			width 100%
+			display block
+	.nav-previous
+		a
+			display none !important
+		
 @media screen and (min-width: 569px)
 	.banners-home-container
 		height 300px
@@ -435,6 +478,19 @@ button.menu-toggle
 				p
 					text-align left
 					height auto
+	.item-video
+		margin-bottom 30px
+		&:first-of-type
+			margin-top 0
+	.single-evento
+		.entry-header
+			height 200px
+		h1.entry-title
+			font-size 2.2em
+		.detalles
+			margin-top 10px
+		h2.desc
+			font-size 1.3em
 @media screen and (min-width: 1200px)
 	.banners-home-container
 		height 450px
@@ -507,3 +563,9 @@ button.menu-toggle
 				a
 					width 50%
 					margin 0 auto
+	.item-video
+		height 160px
+		margin-bottom 0px
+		margin-top 20px
+		&:first-of-type
+			margin-top 20px
