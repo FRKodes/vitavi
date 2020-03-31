@@ -1,0 +1,47 @@
+<?php
+/**
+ * The template for displaying search results pages.
+ *
+ * @package storefront
+ */
+
+get_header(); ?>
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+		<?php if ( have_posts() ) : ?>
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 col-md-12 text-center mt-40">
+						<header class="page-header">
+							<h1 class="page-title search-title">
+								<?php
+									/* translators: %s: search term */
+									printf( esc_attr__( 'Search Results for: %s', 'storefront' ), '<span>' . get_search_query() . '</span>' );
+								?>
+							</h1>
+						</header><!-- .page-header -->
+					</div>
+				</div>
+			</div>
+			
+			<div class="row">
+					<?php
+					get_template_part( 'loop' );
+
+				else :
+
+					get_template_part( 'content', 'none' );
+
+				endif;
+				?>
+				
+			</div>
+
+		</main><!-- #main -->
+	</div><!-- #primary -->
+
+<?php
+do_action( 'storefront_sidebar' );
+get_footer();

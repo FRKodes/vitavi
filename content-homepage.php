@@ -32,6 +32,9 @@ $featured_image = get_the_post_thumbnail_url( get_the_ID(), 'thumbnail' );
 							$loop = new WP_Query( $args_ );
 							while ( $loop->have_posts() ) : $loop->the_post(); ?>
 								<div class="item main-new" style="background-image: url(<?php echo get_the_post_thumbnail_url(); ?>)">
+									<?php if (get_field('evento_privado') == true) { ?>
+										<div class="ribbon-privado"></div><?php
+									} ?>
 									<h2 class="mayus text-center"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 								</div> <?php 
 							endwhile;
@@ -43,6 +46,9 @@ $featured_image = get_the_post_thumbnail_url( get_the_ID(), 'thumbnail' );
 						$loop = new WP_Query( $args );
 						while ( $loop->have_posts() ) : $loop->the_post(); ?>
 							<div class="item" style="background-image: url(<?php echo get_the_post_thumbnail_url(); ?>)">
+								<?php if (get_field('evento_privado') == true) { ?>
+									<div class="ribbon-privado mini"></div><?php
+								} ?>
 								<h3 class="text-center"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 							</div> <?php 
 						endwhile;
@@ -73,7 +79,42 @@ $featured_image = get_the_post_thumbnail_url( get_the_ID(), 'thumbnail' );
 				<iframe width="560" height="315" src="https://www.youtube.com/embed/H18jvmByYIU?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" ></iframe>
 			</div>
 		</div>
+
+	</div>
+
+	<div class="container sobre-vitavi">
+		<div class="row">
+			<div class="col-xs-12 col-md-10 col-lg-8 ml-auto mr-auto">
+				<h2 class="title dorado bold text-center m-top-40">SOBRE VITAVI</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis saepe dolorem, iure aperiam aliquam animi nihil expedita cum. Perferendis quidem cumque eos blanditiis aspernatur, a nihil facilis quo facere officiis.</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-md-10 col-lg-8 ml-auto mr-auto newsletter-container text-center">
+				<h2 class="title dorado bold text-center m-top-40">¡SUSCRÍBETE A NUESTRO NEWSLETTER!</h2>
+				<p>Entérate antes que nadie de los mejores eventos directo en tu correo.</p>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-12 col-md-10 col-lg-5 ml-auto mr-auto newsletter-container text-center">
+				<form action="">
+					<div class="form-group">
+						<input type="text" name="" class="form-control" placeholder="Tu correo electrónico">
+					</div>
+					<div class="form-group">
+						<input type="submit" name="submit" class="btn btn-primary width-100" value="SUSCRIBIRME">
+					</div>
+				</form>
+			</div>
+		</div>
 		
+	</div>
+
+	<div class="container">	
 		<div class="row">
 			<div class="col-xs-12 col-md-4">
 				<div class="inner vino"><a href="/vitavi/vinos"><h2>VINO</h2></a></div>
@@ -82,7 +123,7 @@ $featured_image = get_the_post_thumbnail_url( get_the_ID(), 'thumbnail' );
 				<div class="inner spirits"><a href="/vitavi/spirits"><h2>SPIRITS</h2></a></div>
 			</div>
 			<div class="col-xs-12 col-md-4">
-				<div class="inner puros"><a href="/vitavi/puros"><h2>PUROS</h2></a></div>
+				<div class="inner puros"><a href="/vitavi/tabacos"><h2>TABACOS</h2></a></div>
 			</div>
 		</div>
 
@@ -90,8 +131,35 @@ $featured_image = get_the_post_thumbnail_url( get_the_ID(), 'thumbnail' );
 		<div class="row">
 			<div class="col-xs-12 col-md-10 col-lg-8 mr-auto ml-auto">
 				<p class="text-center daily-phrase">
-					"Vieja madera para arder, vino viejo para beber, viejos amigos en quien confiar y viejos autores para leer." <br><br>
-					<span class="dorado bold">- Francis Bacon</span>
+					<?php
+					$today = getdate();
+					$args = array( 
+						'post_type' => 'frase', 
+						'posts_per_page' => 1, 
+						'date_query' => array(
+						            array(
+						              'year'  => $today['year'],
+						              'month' => $today['mon'],
+						              'day'   => $today['mday']
+						            ),
+						          ),
+					);
+
+					// echo "Date: " . $today['year'] . " - " . $today['mon'] . " - " . $today['mday'] . " - " ;
+
+					$loop = new WP_Query( $args );
+					if ($loop) {
+						while ( $loop->have_posts() ) : $loop->the_post(); ?>
+							"<?php echo get_the_content(); ?>" <br><br>
+							<span class="dorado bold">- <?php the_title(); ?></span>
+							<?php 
+						endwhile;
+						wp_reset_postdata();
+					}else{
+						?>
+						"Hoy no hay frase" <br><br>
+						<?php
+					}?>
 				</p>
 			</div>
 		</div>

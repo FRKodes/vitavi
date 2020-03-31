@@ -3,16 +3,26 @@ dorado = #cbb859
 gris = #ededed
 blanco = #ffffff
 
+a:focus
+	outline none
 .dorado
-	color dorado
+	color dorado !important
 .bold
 	font-weight bold
 .mayus
 	text-transform uppercase
 .m-top-20
+.mt-20
 	margin-top 20px
 .m-top-40
+.mt-40
 	margin-top 40px
+.mb-20
+	margin-bottom 20px
+.mb-40
+	margin-bottom 40px
+.width-100
+	width 100%
 h1
 	color dorado
 	text-transform uppercase
@@ -21,7 +31,22 @@ h1
 	.entry-header
 		h1
 			font-size 2.5em
-
+.ribbon-privado
+	position absolute
+	width 90px
+	height 90px
+	display block
+	top 10px
+	right 15px
+	background url(./assets/images/evento-privado.png) no-repeat center center
+	background-size 85px
+	&.mini
+		width 60px
+		height 60px
+		display block
+		top 15px
+		right 25px
+		background-size 55px
 .woocommerce-breadcrumb
 .storefront-breadcrumb
 .post-edit-link
@@ -37,6 +62,20 @@ h1.entry-title
 .hentry
 	padding 0
 	margin 0
+#secondary
+	display none
+h2.access-title
+	margin-top 50px
+	margin-bottom 30px
+button.woocommerce-form-login__submit
+	background azul
+	color dorado
+	text-transform uppercase
+	margin-left auto
+input[type='text']
+input[type='password']
+.input-text
+	border 1px solid azul
 body
 	background gris
 	color black
@@ -169,12 +208,12 @@ button.menu-toggle
 		text-shadow 0px 0px 5px rgba(150, 150, 150, 0.76)
 		&:hover
 			text-decoration none
-	&.vinos
-		background-image url(./assets/images/puros.jpg)
+	&.vino
+		background-image url(./assets/images/vinos.jpg)
 	&.spirits
 		background-image url(./assets/images/spirits.jpg)
 	&.puros
-		background-image url(./assets/images/vinos.jpg)
+		background-image url(./assets/images/puros.jpg)
 	&:first-of-type
 		margin-top 60px
 .daily-phrase
@@ -187,6 +226,10 @@ button.menu-toggle
 		margin-bottom 30px
 		background-repeat no-repeat
 		background-size cover
+		a
+			width 100%
+			height 100%
+			display block
 		h2
 			width 80%
 			height 100%
@@ -195,6 +238,8 @@ button.menu-toggle
 			align-items center
 			color white
 			margin 0 auto
+			text-shadow 0px 0px 2px rgba(0,0,0,0.5)
+			font-weight bold
 			a
 				color white
 				text-shadow 0px 0px 5px rgba(150, 150, 150, 0.76)
@@ -211,18 +256,23 @@ button.menu-toggle
 			background-size cover
 			background-repeat no-repeat
 			background-position center center
+			a
+				width 100%
+				height 100%
+				display block
+				overflow hidden
 		.info
+			a
+				text-shadow none
+				font-weight bold
+				text-decoration none
+				text-transform uppercase
+				padding 10px
+				display block
 			h3
 				text-decoration none
 				font-size 1.3em
 				margin-bottom 0
-				a
-					text-shadow none
-					font-weight bold
-					text-decoration none
-					text-transform uppercase
-					padding 10px
-					display block
 			p
 				text-align center
 				padding 0 10px 10px 10px
@@ -304,7 +354,194 @@ button.menu-toggle
 	.nav-previous
 		a
 			display none !important
-		
+span.dorado
+	font-size 1.4em
+	
+.detalles
+	p
+		display flex
+		justify-content space-between
+		align-items center
+		span.icon
+			width 5%
+		span.info
+			width 85%
+			text-align left
+.woocommerce-product-gallery.images
+	margin-top 30px !important
+
+.detail-gallery-container
+	height 300px
+	width 100%
+	background rgba(gray, .5)
+	overflow hidden
+	.gallery-item
+		height 300px
+		width 100%
+		display inline-block
+		background-size cover
+		background-repeat no-repeat
+		background-position center center
+		background-color purple
+
+.gallery-item-x
+	height 300px
+	width 100%
+	display inline-block
+	overflow hidden
+
+.single-product
+	div.product
+		p.price
+			margin 15px 0
+			text-align center
+			font-weight bold
+		.woocommerce-product-details__short-description
+			text-align center
+	form.cart
+		text-align center
+.woocommerce-checkout
+	#customer_details
+		.col-1
+		.col-2
+			max-width 100%
+	.woocommerce-input-wrapper
+		width 100%
+	#order_comments
+		height 120px
+button[name="apply_coupon"]
+	background azul
+	text-transform uppercase
+	color white
+.detail-image-header
+	width 100%
+	height 200px
+	display block
+	background-repeat no-repeat
+	background-size cover
+	background-position center center
+	background-color rgba(gris, .2)
+	margin-bottom 30px
+#contactForm
+	margin-top 20px
+.form-control
+	border none !important
+	border-color none
+	border-radius 0
+	background white !important
+.btn.btn-primary
+	background azul
+	color white
+textarea
+	resize none
+.blog
+	.banners-home-container
+		display none
+article
+	.hentry
+		.entry-header
+			margin-bottom 0 !important
+			border none !important
+	.entry-header-inner
+		.post-image
+			width 100%
+			height 200px
+			background-position center center
+			background-repeat no-repeat
+			background-size cover
+			margin-bottom 10px
+			background-color rgba(azul, .1)
+		h2
+			font-size 1.2em
+			text-transform uppercase
+			a
+				color dorado
+				font-weight bold
+.sobre-vitavi
+	margin 30px 0
+	background azul url(./assets/images/banner_acercade.jpg) no-repeat center center
+	background-size cover
+	height auto
+	padding 40px 0
+	p
+		color white
+		text-align center
+		padding-bottom 30px
+		text-shadow 0px 0px 3px rgba(0,0,0,0.58)
+.search-title
+	font-size 1.4em
+.search-form-custom
+.login-link-custom
+.top-search-form
+	display none
+
+.no-results
+	.page-header
+		padding-top 60px
+		text-align center
+		h1.page-title
+			font-size 1.4em
+	.page-content
+		p
+			padding 30px 20px
+			text-align center
+		form
+			display flex
+			justify-content center
+			flex-flow column
+			align-items center
+			margin-bottom 200px
+			.search-submit
+				background azul
+				color white
+fieldset
+	background none
+	legend
+		background none
+.registration-form.woocommerce
+	h2
+		display none
+	.woocommerce-Button.button
+		background azul
+		color white
+		text-transform uppercase
+	.woocommerce-simple-registration-login-link
+		display none
+
+form.register
+	.woocommerce-Input.woocommerce-Input--text.input-text
+		width 100%
+		border 1px solid azul
+.woocomerce-FormRow.form-row
+	text-align center
+h2.text-center.access-title
+	display none
+#customer_login
+	.u-column1.col-1
+		max-width 100%
+	.u-column2.col-2
+		max-width 100%
+.woocommerce-form.woocommerce-form-register.register
+	.woocommerce-Button.button
+		background azul
+		color dorado
+		text-transform uppercase
+@media screen and (min-width: 425px)
+	.detalles
+		p
+			display flex
+			justify-content space-between
+			align-items center
+			span.icon
+				width 5%
+			span.info
+				width 90%
+				text-align left
+@media screen and (min-width: 480px)
+	.detalles
+		p
+			span.info
+				width 93%
 @media screen and (min-width: 569px)
 	.banners-home-container
 		height 300px
@@ -312,6 +549,11 @@ button.menu-toggle
 			height 300px
 			background-size cover
 @media screen and (min-width: 768px)
+	.main-navigation ul.menu > li > a
+	.main-navigation ul.nav-menu > li > a
+		font-size .8em
+	.login-link-custom
+		font-size .8em
 	.site-header
 		.col-full
 			display flex
@@ -491,6 +733,132 @@ button.menu-toggle
 			margin-top 10px
 		h2.desc
 			font-size 1.3em
+	.product_title.entry-title
+		text-align left
+	
+	.single-product
+		div.product
+			p.price
+				text-align left
+				font-size 2em
+				font-weight normal
+			.woocommerce-product-details__short-description
+				text-align left
+		form.cart
+			text-align left
+			
+	.detalles
+		p
+			span.info
+				width 94%
+	.hentry
+		.entry-header
+			margin-bottom 0 !important
+			border none !important
+		.entry-content
+			p
+				font-size .9em
+	article
+		.entry-header-inner
+			h2
+				margin-top 15px
+	.ribbon-privado
+		&.mini.cat
+			width 60px
+			height 60px
+			display block
+			top 10px
+			right unset
+			left 30%
+			background-size 55px
+	.no-results
+		.page-header
+			padding-top 60px
+			text-align center
+			h1.page-title
+				font-size 1.6em
+		.page-content
+			p
+				padding 60px 100px
+			form
+				flex-flow row
+				label
+					margin-bottom 0
+				.search-field
+					padding 14px 20px
+				.search-submit
+					background azul
+					color white
+					padding 14px 40px
+	body.register
+		p
+			text-align center
+	form.register
+		width 100%
+		margin 0 auto
+		display flex
+		flex-flow column
+		justify-content center
+		align-items center
+		p
+			width 100%
+			display block
+	.col2-set#customer_login .col-1
+	.col2-set#customer_login .col-2
+	.col2-set.addresses .col-2
+		width 100%
+		max-width 100%
+	.col2-set .form-row-first
+	.woocommerce-FormRow.woocommerce-FormRow--first.form-row.form-row-first
+	.woocommerce-FormRow.woocommerce-FormRow--last.form-row.form-row-last
+		width 100%
+		margin-right 0
+@media screen and (min-width: 992px)
+	.top-search-form
+		display flex
+		justify-content center
+		align-items center
+		width 100%
+		position absolute
+		top -70px
+		height auto
+		right 0
+		background rgba(azul, .9)
+		padding 10px 0
+		z-index 10
+		transition top .5s ease
+		&.show
+			top 70px
+			transition top .5s ease
+		form
+			margin 5px 0 0 0
+			.search-submit
+				background azul
+				color white
+				text-transform uppercase
+				padding 6px 10px
+			input[type='search']
+				padding 5px
+	.detalles
+		p
+			span.icon
+				width 3%
+			span.info
+				width 90%
+	.search-title
+		font-size 2em
+	.search-form-custom
+	.login-link-custom
+		display flex
+		align-items center
+		justify-content center
+		padding-left 10px
+		padding-right 10px
+		padding-top 4px
+		padding-bottom 4px
+		height 38px
+		a
+			color white
 @media screen and (min-width: 1200px)
 	.banners-home-container
 		height 450px
@@ -569,3 +937,16 @@ button.menu-toggle
 		margin-top 20px
 		&:first-of-type
 			margin-top 20px
+	.sobre-vitavi
+		margin 60px 0 50px 0
+		p
+			padding-bottom 30px
+	.ribbon-privado
+		&.mini.cat
+			width 60px
+			height 60px
+			display block
+			top 10px
+			right unset
+			left 33%
+			background-size 55px

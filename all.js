@@ -6,3 +6,32 @@ jQuery('.banners-home-container').slick({
   dots: true,
   infinite: true
 });
+
+jQuery('.detail-gallery-container').slick({
+  infinite: false,
+  speed: 300,
+  autoplay: true,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        infinite: true
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]
+});
+
+jQuery('a[data-activate="search-form"]').on('click', function () {
+  jQuery('.top-search-form').toggleClass('show');
+});

@@ -19,7 +19,7 @@ get_header(); ?>
 			while ( have_posts() ) :
 				the_post();
 
-				get_template_part( 'content', 'page-puros' );
+				get_template_part( 'content', 'page-tabacos' );
 
 			endwhile; // End of the loop.
 			?>

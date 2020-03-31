@@ -1,11 +1,10 @@
 @charset 'UTF-8';
-/* Slider */
+
 .slick-loading .slick-list
 {
     background: #fff url('./assets/images/ajax-loader.gif') center center no-repeat;
 }
 
-/* Arrows */
 .slick-prev,
 .slick-next
 {

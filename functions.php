@@ -72,6 +72,30 @@ if ( ! function_exists( 'storefront_site_branding' ) ) {
 	}
 }
 
+if ( ! function_exists( 'storefront_primary_navigation_wrapper_close' ) ) {
+    /**
+     * The primary navigation wrapper close
+     */
+    function storefront_primary_navigation_wrapper_close() {
+        echo '
+            <div class="login-link-custom">';
+        if (is_user_logged_in()) {
+            $current_user = wp_get_current_user();
+            echo '<a href="'.get_permalink( wc_get_page_id( 'myaccount' ) ).'" class="login-link">Hola '.esc_html( $current_user->user_firstname ).'!</a>';
+        }else{
+            echo '<a href="/registro" class="login-link">ACCESO</a>';
+        }
+
+        echo '
+            </div>
+            <div class="search-form-custom">
+                <a href="#search" data-activate="search-form" class="icon-search"></a>
+            </div>
+            
+        </div></div>';
+    }
+}
+
 add_action( 'init', 'create_banner_post_type' );
 
 function create_banner_post_type() {
@@ -153,6 +177,37 @@ function create_event_taxonomies() {
     );
 }
 
+
+add_action( 'init', 'create_phrase_post_type' );
+
+function create_phrase_post_type() {
+    register_post_type( 'frase',
+        array(
+            'labels' => array(
+                'name' => 'Frases',
+                'singular_name' => 'Frase',
+                'add_new' => 'Agregar Nueva Frase',
+                'add_new_item' => 'Agregar Nueva Frase',
+                'edit' => 'Editar',
+                'edit_item' => 'Editar Frase',
+                'new_item' => 'Nueva Frase',
+                'view' => 'Ver',
+                'view_item' => 'Ver Frase',
+                'search_items' => 'Buscar Frase',
+                'not_found' => 'No se encontró la frase',
+                'not_found_in_trash' => 'No se encontró la frase en la papelera',
+                'parent' => 'Frase Padre'
+            ),
+ 
+            'public' => true,
+            'menu_position' => 15,
+            'supports' => array( 'title', 'editor', 'thumbnail' ),
+            'taxonomies' => array( '' ),
+            // 'menu_icon' => plugins_url( 'images/image.png', __FILE__ ),
+            'has_archive' => true
+        )
+    );
+}
 
 if ( ! function_exists( 'storefront_post_header' ) ) {
     /**

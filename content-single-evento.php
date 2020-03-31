@@ -46,16 +46,20 @@
 			</div>
 
 			<div class="col-xs-12 col-md-12 col-lg-4 ml-auto detalles">
-				<p>
-					<span class="icon-watch"></span> Jueves 12 Diciembre 2019 de 21:00 a 23:55 Hrs.
-				</p>
-				<p>
-					<span class="icon-pin"></span> <b>Conjunto Santander</b> <br>
-					Lorem ipsum dolor sit amet #201.
-				</p>
-				<p>
-					<a href="#">Conseguir entradas</a>
-				</p>
+				<?php if(is_user_logged_in()){ ?>
+					<p>
+						<span class="icon icon-watch dorado"></span>
+						<span class="info"><?php the_field('fecha_evento') ?></span>
+					</p>
+					<p>
+						<span class="icon icon-place dorado"></span>
+						<span class="info"><?php the_field('ubicacion') ?></span>
+					</p>
+					<p>
+						<span class="icon icon-boletos dorado"></span>
+						<span class="info"><a href="<?php the_field('enlace_boletos') ?>">Conseguir entradas</a></span>
+					</p>
+				<?php } ?>
 			</div>
 
 		</div>
@@ -63,10 +67,23 @@
 		<div class="row">
 			<div class="col-xs-12 col-md-12 m-top-20">
 				<h2 class="desc">GALERÍA</h2>
-				<figure>
-					<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/galeria.png" alt="galeria">
-				</figure>
 			</div>
+
+		    		<!-- <div class="detail-gallery-container">
+						<?php foreach( $images as $image ): 
+							$thumbnail_image = esc_url($image['url']); ?>
+							<div class="gallery-item" style="background-image: url(<?php echo $thumbnail_image; ?>);"></div>
+						<?php endforeach; ?>
+					</div> -->
+
+				<?php $images = get_field('galeria_imagenes');
+				if( $images ): 
+					foreach( $images as $image ): ?>
+						<div class="col-xs-12 col-md-6 col-lg-4 gallery-item-x m-top-20">
+							<img src="<?php echo esc_url($image['url']); ?> " alt="">
+						</div>
+					<?php endforeach; ?>
+				<?php endif; ?>
 		</div>
 
 		<div class="row">

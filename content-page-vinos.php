@@ -26,12 +26,15 @@
 	<div class="container">
 		<div class="row">
 			<?php
-			$args = array( 'post_type' => 'evento', 'posts_per_page' => 12, 'order' => 'DESC' );
+			$args = array( 'post_type' => 'evento', 'categoria_evento' => 'vinos', 'posts_per_page' => 12, 'order' => 'DESC' );
 			$loop = new WP_Query( $args );
 			while ( $loop->have_posts() ) : $loop->the_post(); ?>
 				<div class="col-xs-12 col-md-12 feed-item general">
 					<div class="inner-feed">
 						<div class="foto" style="background-image: url(<?php echo get_the_post_thumbnail_url(); ?>)">
+							<?php if (get_field('evento_privado') == true) { ?>
+								<div class="ribbon-privado mini cat"></div><?php
+							} ?>
 							<a href="<?php the_permalink(); ?>"></a>
 						</div>
 						<div class="info">

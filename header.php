@@ -59,6 +59,10 @@
 	?>
 
 	<div id="content" class="site-content" tabindex="-1">
+		<div class="top-search-form">
+			<?php get_search_form(); ?>
+		</div>
+
 		<?php if (is_home() || is_front_page() ) { ?>
 			<div class="banners-home-container"> <?php
 				$args = array( 'post_type' => 'banner', 'posts_per_page' => 6 );
