@@ -424,6 +424,12 @@ button[name="apply_coupon"]
 	margin-bottom 30px
 #contactForm
 	margin-top 20px
+	position relative
+	overflow hidden
+.form-group.error
+	input[type='text']
+		border 1px solid red !important
+		transition border .5s ease
 .form-control
 	border none !important
 	border-color none
@@ -526,6 +532,16 @@ h2.text-center.access-title
 		background azul
 		color dorado
 		text-transform uppercase
+.sent_mail_alert
+	background rgba(azul)
+	color white
+	text-align center
+	padding 30px 20px
+	position absolute
+	width 100%
+	height auto
+	display none
+	bottom 100px
 @media screen and (min-width: 425px)
 	.detalles
 		p
@@ -813,6 +829,9 @@ h2.text-center.access-title
 	.woocommerce-FormRow.woocommerce-FormRow--last.form-row.form-row-last
 		width 100%
 		margin-right 0
+	.sent_mail_alert
+		padding 30px 70px
+		font-size 1.2em
 @media screen and (min-width: 992px)
 	.top-search-form
 		display flex

@@ -32,18 +32,18 @@
 						<input type="text" name="nombre" class="form-control" data-validate="required" placeholder="Nombre*">
 					</div>
 					<div class="form-group">
-						<input type="text" name="nombre" class="form-control" data-validate="required|email" placeholder="Email*">
+						<input type="text" name="email" class="form-control" data-validate="required|email" placeholder="Email*">
 					</div>
 					<div class="form-group">
-						<input type="text" name="nombre" class="form-control" data-validate="" placeholder="Teléfono">
+						<input type="text" name="telefono" class="form-control" data-validate="" placeholder="Teléfono">
 					</div>
 					<div class="form-group">
-						<textarea name="" class="form-control" id="" cols="30" rows="10" placeholder="Comentario"></textarea>
+						<textarea name="comentario" class="form-control" id="" cols="30" rows="10" placeholder="Comentario"></textarea>
 					</div>
 					<div class="form-group text-right">
 						<input type="submit" name="submit" class="btn btn-primary" value="ENVIAR">
 					</div>
-					
+					<div class="sent_mail_alert">¡Gracias!<br><br>Tu mensaje se envió exitosamente, nos pondremos en contacto contigo a la brevedad.</div>
 				</form>
 			</div>
 		</div>

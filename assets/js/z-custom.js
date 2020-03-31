@@ -26,24 +26,62 @@ jQuery('.detail-gallery-container').slick({
   slidesToShow: 1,
   slidesToScroll: 1,
   responsive: [
-    {
-      breakpoint: 768,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2,
-        infinite: true
-      }
-    },
-    {
-      breakpoint: 480,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1
-      }
-    }
+	{
+	  breakpoint: 768,
+	  settings: {
+		slidesToShow: 2,
+		slidesToScroll: 2,
+		infinite: true
+	  }
+	},
+	{
+	  breakpoint: 480,
+	  settings: {
+		slidesToShow: 1,
+		slidesToScroll: 1
+	  }
+	}
   ]
 });
 
 jQuery('a[data-activate="search-form"]').on('click', function () {
   jQuery('.top-search-form').toggleClass('show');
+});
+
+
+/*validator*/
+jQuery(function(){
+	var formSettings = {
+		singleError : function($field, rules){ 
+			$field.closest('.form-group').removeClass('valid').addClass('error');
+			jQuery('.text-danger').fadeIn();
+		},
+		singleSuccess : function($field, rules){ 
+			$field.closest('.form-group').removeClass('error').addClass('valid');
+			jQuery('.text-danger').fadeOut();
+		},
+		overallSuccess : function(){
+			var form		= jQuery('#contactForm'),
+			nombre			= form.find( "input[name='nombre']").val(),
+			email			= form.find( "input[name='email']").val(),
+			telefono		= form.find( "input[name='telefono']").val(),
+			comentario		= form.find( "textarea[name='comentario']").val(),
+			action			= form.attr( "action"),
+			url				= action;
+
+			var posting = jQuery.post(
+				url, { nombre: nombre, telefono: telefono, email: email, comentario: comentario }
+			);
+			posting.done(function( data ){
+				jQuery('#contactForm')[0].reset();
+				jQuery('.sent_mail_alert').fadeIn().delay(3000).fadeOut();
+
+				console.log('contact email!');
+
+			});
+		},
+		overallError : function($form, fields){ /*Do nothing, just show the error fields*/ },
+		autoDetect : true, debug : true
+	};
+	var $validate = jQuery('#contactForm').validate(formSettings).data('validate');
 });
